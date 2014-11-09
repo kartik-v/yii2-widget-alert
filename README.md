@@ -35,15 +35,25 @@ You can refer detailed [documentation and demos](http://demos.krajee.com/widget-
 
 ## Usage
 
+### Alert
 ```php
-use kartik\alert\Growl;
+use kartik\alert\Alert;
 
-echo Growl::widget([
-	'type' => Growl::TYPE_SUCCESS,
-	'icon' => 'glyphicon glyphicon-ok-sign',
+echo Alert::widget([
+	'type' => Alert::TYPE_INFO,
 	'title' => 'Note',
-	'showSeparator' => true,
-	'body' => 'This is a successful alerting alert.'
+	'titleOptions' => ['icon' => 'info-sign'],
+	'body' => 'This is an informative alert'
+]);
+```
+
+### AlertBlock
+```php
+use kartik\alert\AlertBlock;
+
+echo AlertBlock::widget([
+	'type' => AlertBlock::TYPE_ALERT,
+	'useSessionFlash' => true
 ]);
 ```
 
