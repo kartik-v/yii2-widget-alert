@@ -31,7 +31,7 @@ to the ```require``` section of your `composer.json` file.
 
 ## Demo
 
-You can refer detailed [documentation and demos](http://demos.krajee.com/widget-details/alert) on usage of the extension.
+You can refer detailed documentation and demos for [Alert](http://demos.krajee.com/widget-details/alert) and [AlertBlock](http://demos.krajee.com/widget-details/alert-block) widgets on usage of the extension.
 
 ## Usage
 
