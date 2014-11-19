@@ -4,7 +4,7 @@
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014
  * @package yii2-widgets
  * @subpackage yii2-widget-alert
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 namespace kartik\alert;
@@ -13,6 +13,7 @@ use Yii;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use kartik\base\Config;
+use kartik\growl\Growl;
 
 /**
  * Alert block widget that groups multiple `\kartik\widget\Alert` or `kartik\widget\Growl` widgets as one single block.
