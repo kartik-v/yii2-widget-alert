@@ -31,6 +31,16 @@ or add
 
 to the ```require``` section of your `composer.json` file.
 
+> NOTE: Using Growl is optional and it is not automatically installed with this extension. If you want to use it in your project, you need to either run
+```
+$ php composer.phar require kartik-v/yii2-widget-growl "*"
+```
+or add
+```
+"kartik-v/yii2-widget-growl": "*"
+```
+to the `require` section of your `composer.json` file.
+
 ## Latest Release
 
 > NOTE: The latest version of the module is v1.1.0 released on 19-Nov-2014. Refer the [CHANGE LOG](https://github.com/kartik-v/yii2-widget-alert/blob/master/CHANGE.md) for details.
