@@ -1,11 +1,11 @@
 yii2-widget-alert
 =================
 
-[![Latest Stable Version](https://poser.pugx.org/kartik-v/yii2-widget-alert/v/stable.svg)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
-[![License](https://poser.pugx.org/kartik-v/yii2-widget-alert/license.svg)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
-[![Total Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/downloads.svg)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
-[![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/d/monthly.png)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
-[![Daily Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/d/daily.png)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
+[![Latest Stable Version](https://poser.pugx.org/kartik-v/yii2-widget-alert/v/stable)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
+[![License](https://poser.pugx.org/kartik-v/yii2-widget-alert/license)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
+[![Total Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/downloads)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
+[![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/d/monthly)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
+[![Daily Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/d/daily)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
 
 This extension contains a couple of useful widgets. The `Alert` widget extends the `\yii\bootstrap\Alert` widget with more easy styling and auto fade out options. In addition, it includes a `AlertBlock` widget that groups multiple `\kartik\widget\Alert` or `kartik\widget\Growl` widgets in one single block and renders them stacked vertically on the current page. 
 You can choose the `TYPE_ALERT` style or the `TYPE_GROWL` style for your notifications. You can also set the widget to automatically read and display session flash 
