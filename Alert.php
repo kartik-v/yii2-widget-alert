@@ -69,10 +69,15 @@ class Alert extends \yii\bootstrap\Alert
     public $showSeparator = false;
 
     /**
-     * @var integer the delay in microseconds after which the alert will be displayed.
+     * @var integer the delay in microseconds after which the alert will be faded out.
      * Will be useful when multiple alerts are to be shown.
      */
     public $delay;
+
+    /**
+     * @var integer the time in microseconds which the alert will faded out.
+     */
+    public $fadeTime = 2000;
 
     /**
      * Runs the widget
@@ -132,7 +137,7 @@ class Alert extends \yii\bootstrap\Alert
         AlertAsset::register($view);
 
         if ($this->delay > 0) {
-            $js = 'setTimeout(function() { jQuery("#' . $this->options['id'] . '").fadeOut(2000, function() {
+            $js = 'setTimeout(function() { jQuery("#' . $this->options['id'] . '").fadeOut('.$this->fadeTime.', function() {
                 $(this).slideUp("slow", function() {
                   $(this).remove();
                 });
