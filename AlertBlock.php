@@ -134,6 +134,7 @@ class AlertBlock extends \yii\bootstrap\Widget
         foreach ($flashes as $alert => $message) {
             if (!empty($this->alertSettings[$alert])) {
                 $settings = $this->alertSettings[$alert];
+                $message = (is_string($message)) ? [$message] : $message;
                 foreach ($message as $options) {
                   if (is_array($options)) {
                     foreach ($options as $option => $value) {
