@@ -131,16 +131,21 @@ class AlertBlock extends \yii\bootstrap\Widget
         $session = Yii::$app->getSession();
         $flashes = $session->getAllFlashes();
         $delay = $this->delay;
-        foreach ($flashes as $alert => $message) {
+        foreach ($flashes as $alert => $messages) {
             if (!empty($this->alertSettings[$alert])) {
                 $settings = $this->alertSettings[$alert];
-                $settings['body'] = $message;
                 if (empty($settings['closeButton'])) {
                     $settings['closeButton'] = $this->closeButton;
                 }
-                $settings['delay'] = $delay;
-                $delay += $this->delay;
-                echo ($type == self::TYPE_GROWL) ? Growl::widget($settings) : Alert::widget($settings);
+                if (!is_array($messages)) {
+                    $messages = [$messages];
+                }
+                foreach ($messages as $message) {
+                    $settings['body'] = $message;
+                    $settings['delay'] = $delay;
+                    $delay += $this->delay;
+                    echo ($type == self::TYPE_GROWL) ? Growl::widget($settings) : Alert::widget($settings);
+                }
                 $session->removeFlash($alert);
             }
         }
