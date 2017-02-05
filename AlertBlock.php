@@ -133,14 +133,17 @@ class AlertBlock extends \yii\bootstrap\Widget
         $delay = $this->delay;
         foreach ($flashes as $alert => $message) {
             if (!empty($this->alertSettings[$alert])) {
-                $settings = $this->alertSettings[$alert];
-                $settings['body'] = $message;
-                if (empty($settings['closeButton'])) {
-                    $settings['closeButton'] = $this->closeButton;
+                $messages = is_array($message)?$message:[$message];
+                foreach($messages as $message) {
+                    $settings = $this->alertSettings[$alert];
+                    $settings['body'] = $message;
+                    if (empty($settings['closeButton'])) {
+                        $settings['closeButton'] = $this->closeButton;
+                    }
+                    $settings['delay'] = $delay;
+                    $delay += $this->delay;
+                    echo ($type == self::TYPE_GROWL) ? Growl::widget($settings) : Alert::widget($settings);
                 }
-                $settings['delay'] = $delay;
-                $delay += $this->delay;
-                echo ($type == self::TYPE_GROWL) ? Growl::widget($settings) : Alert::widget($settings);
                 $session->removeFlash($alert);
             }
         }
