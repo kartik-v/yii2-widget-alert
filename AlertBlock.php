@@ -1,70 +1,76 @@
 <?php
 
 /**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
  * @package yii2-widgets
  * @subpackage yii2-widget-alert
- * @version 1.1.0
+ * @version 1.1.1
  */
 
 namespace kartik\alert;
 
 use Yii;
+use yii\base\InvalidConfigException;
+use yii\bootstrap\Widget;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use kartik\base\Config;
 use kartik\growl\Growl;
 
 /**
- * Alert block widget that groups multiple `\kartik\widget\Alert` or `kartik\widget\Growl` widgets as one single block.
- * You can choose to automatically read and display session flash messages (which is the default setting) or setup
- * your own block of custom alerts.
+ * AlertBlock widget groups multiple [[Alert]] or [[Growl]] widgets as one single block. You can choose to
+ * automatically read and display session flash messages (which is the default setting) or setup your own block of
+ * custom alerts.
  *
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
  */
-class AlertBlock extends \yii\bootstrap\Widget
+class AlertBlock extends Widget
 {
+    /**
+     * Default bootstrap alert style 
+     */
     const TYPE_ALERT = 'alert';
+    /**
+     * Bootstrap growl plugin alert style
+     */
     const TYPE_GROWL = 'growl';
 
     /**
-     * @var string the type of alert to use. Can be one of `TYPE_ALERT` or `TYPE_GROWL`.
-     * Defaults to `TYPE_ALERT`.
+     * @var string the type of alert to use. Can be one of [[TYPE_ALERT]] or [[TYPE_GROWL]]. Defaults to [[TYPE_ALERT]].
      */
     public $type = self::TYPE_ALERT;
 
     /**
      * @var integer time in milliseconds to delay the fade out of each alert. If set to `0` or `false`, alerts
-     * will never fade out and will be always displayed. This defaults to `2000` ms for `TYPE_ALERT` and
-     * `1000` ms for `TYPE_GROWL`.
+     * will never fade out and will be always displayed. This defaults to `2000` ms for [[TYPE_ALERT]] and
+     * `1000` ms for [[TYPE_GROWL]].
      */
     public $delay;
 
     /**
-     * @var bool whether to automatically use messages set via `Yii::$app->session->setFlash()`. Defaults to `true`.
-     * If set to `false`, you would need to pass the `body` setting within `alertSetting` array.
+     * @var boolean whether to automatically use messages set via `Yii::$app->session->setFlash()`. Defaults to `true`.
+     * If set to `false`, you would need to pass the `body` setting within [[alertSetting]] array.
      */
     public $useSessionFlash = true;
 
     /**
-     * @var array the alert types configuration for the alert messages. This array is setup as $alert => $settings, where:
-     * - $alert: string is the name of the session flash variable (e.g. error, success, info, warning)
-     * - $settings: array, the `\kartik\widgets\Alert` or `\kartik\widgets\Growl` widget settings depending
-     *   on what `type` has been set.
-     * @see \kartik\widgets\Alert
-     * @see \kartik\widgets\Growl
+     * @var array the alert types configuration for the alert messages. This array is setup as `$alert => $settings`,
+     * where:
+     *
+     * - `$alert`: _string_, is the name of the session flash variable (e.g. `error`, `success`, `info`, `warning`).
+     * - `$settings`: _array_, the [[Alert]] or [[Growl]] widget settings depending on the [[type]] set.
      */
     public $alertSettings = [];
 
     /**
      * @var array the options for rendering the close button tag. This will be overridden by the `closeButton` setting
-     * within the `alertSettings` configuration.
+     * within the [[alertSettings]] configuration.
      */
     public $closeButton = [];
 
     /**
-     * Initialize the alert block widget
+     * @inheritdoc
      */
     public function init()
     {
@@ -74,7 +80,7 @@ class AlertBlock extends \yii\bootstrap\Widget
     }
 
     /**
-     * Runs the widget
+     * @inheritdoc
      */
     public function run()
     {
@@ -88,7 +94,8 @@ class AlertBlock extends \yii\bootstrap\Widget
     }
 
     /**
-     * Initializes options and settings
+     * Initializes widget options and settings.
+     *
      * @throws InvalidConfigException
      */
     protected function initOptions()
@@ -123,7 +130,8 @@ class AlertBlock extends \yii\bootstrap\Widget
     }
 
     /**
-     * Renders alerts from session flash
+     * Renders alerts from session flash settings.
+     * @see [[\yii\web\Session::getAllFlashes()]]
      */
     public function renderFlashAlerts()
     {
@@ -131,17 +139,15 @@ class AlertBlock extends \yii\bootstrap\Widget
         $session = Yii::$app->getSession();
         $flashes = $session->getAllFlashes();
         $delay = $this->delay;
-        foreach ($flashes as $alert => $messages) {
+        foreach ($flashes as $alert => $config) {
             if (!empty($this->alertSettings[$alert])) {
-                $settings = $this->alertSettings[$alert];
-                if (empty($settings['closeButton'])) {
-                    $settings['closeButton'] = $this->closeButton;
-                }
-                if (!is_array($messages)) {
-                    $messages = [$messages];
-                }
-                foreach ($messages as $message) {
+                $messages = is_array($config) ? $config : [$config];
+                foreach($messages as $message) {
+                    $settings = $this->alertSettings[$alert];
                     $settings['body'] = $message;
+                    if (empty($settings['closeButton'])) {
+                        $settings['closeButton'] = $this->closeButton;
+                    }
                     $settings['delay'] = $delay;
                     $delay += $this->delay;
                     echo ($type == self::TYPE_GROWL) ? Growl::widget($settings) : Alert::widget($settings);
