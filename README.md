@@ -1,7 +1,8 @@
 yii2-widget-alert
 =================
 
-[![Latest Stable Version](https://poser.pugx.org/kartik-v/yii2-widget-alert/v/stable)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
+[![Stable Version](https://poser.pugx.org/kartik-v/yii2-widget-alert/v/stable)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
+[![Unstable Version](https://poser.pugx.org/kartik-v/yii2-widget-alert/v/unstable)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
 [![License](https://poser.pugx.org/kartik-v/yii2-widget-alert/license)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
 [![Total Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/downloads)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
 [![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/d/monthly)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
@@ -41,7 +42,7 @@ or add
 ```
 to the `require` section of your `composer.json` file.
 
-> NOTE: The latest version of the module is v1.1.1. Refer the [CHANGE LOG](https://github.com/kartik-v/yii2-widget-alert/blob/master/CHANGE.md) for details.
+> Refer the [CHANGE LOG](https://github.com/kartik-v/yii2-widget-alert/blob/master/CHANGE.md) for details on changes to various releases.
 
 ## Demo
 
@@ -73,4 +74,4 @@ echo AlertBlock::widget([
 
 ## License
 
-**yii2-widget-alert** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
+**yii2-widget-alert** is released under the BSD-3-Clause License. See the bundled `LICENSE.md` for details.

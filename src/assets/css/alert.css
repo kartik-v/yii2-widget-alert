@@ -1,13 +1,9 @@
 /*!
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2018
  * @package yii2-widgets
- * @version 1.1.1
+ * @version 1.1.2
  *
  * Styling for \kartik\widgets\Alert widget for Bootstrap 3.x
- * Built for Yii Framework 2.0
- * Author: Kartik Visweswaran
- * Year: 2014
- * For more Yii related demos visit http://demos.krajee.com
  */
 .bg-primary .alert-link {
     color: #fff !important;
