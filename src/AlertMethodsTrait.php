@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2018
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2020
  * @package yii2-widgets
  * @subpackage yii2-widget-alert
  * @version 1.1.2
@@ -50,6 +50,9 @@ trait AlertMethodsTrait
             $icon = Html::tag('span', '', $this->iconOptions) . ' ';
         }
         if (!empty($this->title)) {
+            if (empty($this->titleOptions['class'])) {
+                $this->titleOptions['class'] = 'kv-alert-title';
+            }
             $tag = ArrayHelper::remove($this->titleOptions, 'tag', 'span');
             $title = Html::tag($tag, $this->title, $this->titleOptions);
             if ($this->showSeparator) {
@@ -83,7 +86,7 @@ trait AlertMethodsTrait
         $view = $this->getView();
         AlertAsset::register($view);
 
-        if ($this->delay > 0) {
+        if (!empty($this->delay) && $this->delay > 0) {
             $js = 'jQuery("#' . $this->options['id'] . '").fadeTo(' . $this->delay . ', 0.00, function() {
 				$(this).slideUp("slow", function() {
 					$(this).remove();

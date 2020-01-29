@@ -18,41 +18,41 @@ namespace kartik\alert;
 trait AlertTrait
 {
     /**
-     * @var string the type of the alert to be displayed. One of the `TYPE_` constants.
+     * @var string the type of the alert to be displayed. One of the `TYPE_` constants. Defaults to [[TYPE_INFO]].
      */
-    public $type;
+    public $type = self::TYPE_INFO;
 
     /**
      * @var string the icon type. Can be either 'class' or 'image'. Defaults to 'class'.
      */
-    public $iconType;
+    public $iconType = 'class';
 
     /**
      * @var string the class name for the icon to be displayed. If set to empty or null, will not be displayed.
      */
-    public $icon;
+    public $icon = '';
 
     /**
      * @var array the HTML attributes for the icon.
      */
-    public $iconOptions;
+    public $iconOptions = [];
 
     /**
      * @var string the title for the alert. If set to empty or null, will not be displayed.
      */
-    public $title;
+    public $title = '';
 
     /**
      * @var array the HTML attributes for the title. The following options are additionally recognized:
      *
      * - `tag`: _string_, the HTML tag to render the title. Defaults to `span`.
      */
-    public $titleOptions;
+    public $titleOptions = ['class' => 'kv-alert-title'];
 
     /**
      * @var boolean show the title separator. Only applicable if [[title]] is set.
      */
-    public $showSeparator;
+    public $showSeparator = false;
 
     /**
      * @var integer the delay in microseconds after which the alert will be displayed. Will be useful when multiple
