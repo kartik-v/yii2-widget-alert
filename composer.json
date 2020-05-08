@@ -1,5 +1,5 @@
 {
-    "name": "kartik-v/yii2-widget-alert",
+    "name": "factorenergia/yii2-widget-alert",
     "description": "A widget to generate alert based notifications using bootstrap-alert plugin (sub repo split from yii2-widgets)",
     "keywords": [
         "yii2",
@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "kartik\\alert\\": "src"
+            "factorenergia\\alert\\": "src"
         }
     },
     "extra": {

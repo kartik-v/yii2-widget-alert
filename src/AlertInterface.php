@@ -7,7 +7,7 @@
  * @version 1.1.3
  */
 
-namespace kartik\alert;
+namespace factorenergia\alert;
 
 /**
  * Interface used in [[Alert]], [[AlertBs4]] and [[AlertBs3]] widgets.
