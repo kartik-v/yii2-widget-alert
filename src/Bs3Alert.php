@@ -7,7 +7,7 @@
  * @version 1.1.3
  */
 
-namespace kartik\alert;
+namespace factorenergia\alert;
 
 use Yii;
 use yii\bootstrap\Alert;

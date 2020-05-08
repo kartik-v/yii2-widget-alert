@@ -7,7 +7,7 @@
  * @version 1.1.3
  */
 
-namespace kartik\alert;
+namespace factorenergia\alert;
 
 /**
  * Alert properties trait for [[Alert]], [[AlertBs4]] and [[AlertBs3]] widgets

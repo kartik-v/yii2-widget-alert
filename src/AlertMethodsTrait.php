@@ -7,7 +7,7 @@
  * @version 1.1.3
  */
 
-namespace kartik\alert;
+namespace factorenergia\alert;
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
