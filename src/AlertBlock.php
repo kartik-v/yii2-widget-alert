@@ -11,7 +11,7 @@ namespace kartik\alert;
 
 use Yii;
 use yii\base\InvalidConfigException;
-use yii\bootstrap\Widget;
+use yii\bootstrap4\Widget;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use kartik\base\Config;
