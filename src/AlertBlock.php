@@ -11,10 +11,10 @@ namespace kartik\alert;
 
 use Yii;
 use yii\base\InvalidConfigException;
-use yii\bootstrap\Widget;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use kartik\base\Config;
+use kartik\base\Widget;
 use kartik\growl\Growl;
 
 /**
