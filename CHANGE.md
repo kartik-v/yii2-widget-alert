@@ -1,6 +1,12 @@
 Change Log: `yii2-widget-alert`
 ===============================
 
+## Version 1.1.4
+
+**Date:** _under development_
+
+- (bug #21): Correct yii2-widget-growl dependency.
+
 ## Version 1.1.3
 
 **Date:** 09-Mar-2020

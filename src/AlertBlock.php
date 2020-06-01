@@ -4,7 +4,7 @@
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2020
  * @package yii2-widgets
  * @subpackage yii2-widget-alert
- * @version 1.1.3
+ * @version 1.1.4
  */
 
 namespace kartik\alert;
