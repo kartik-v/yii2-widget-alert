@@ -3,8 +3,9 @@ Change Log: `yii2-widget-alert`
 
 ## Version 1.1.4
 
-**Date:** _under development_
+**Date:** 02-Jun-2020
 
+- (bug #23, #24): Correct `AlertBlock` base widget class.
 - (bug #21): Correct yii2-widget-growl dependency.
 
 ## Version 1.1.3
