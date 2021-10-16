@@ -9,7 +9,7 @@
 
 namespace kartik\alert;
 
-use yii\bootstrap4\Alert;
+use yii\bootstrap5\Alert;
 
 /**
  * Alert widget extends the [[Alert]] widget with an easier configuration and additional styling options including
@@ -18,7 +18,7 @@ use yii\bootstrap4\Alert;
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
  */
-class Bs4Alert extends Alert implements AlertInterface
+class Bs5Alert extends Alert implements AlertInterface
 {
     use AlertMethodsTrait;
 }

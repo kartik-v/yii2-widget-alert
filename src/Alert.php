@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2020
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2021
  * @package yii2-widgets
  * @subpackage yii2-widget-alert
- * @version 1.1.4
+ * @version 1.1.5
  */
 
 namespace kartik\alert;
@@ -67,9 +67,10 @@ class Alert extends Widget implements AlertInterface
         if (isset($this->delay)) {
             $opts['delay'] = $this->delay;
         }
-        if ($this->isBs4()) {
-            return Bs4Alert::widget($opts);
-        }
-        return Bs3Alert::widget($opts);
+        /**
+         * @var Widget $class
+         */
+        $class = '\\kartik\\alert\\Bs' . $this->getBsVer() . 'Alert';
+        return $class::widget($opts);
     }
 }

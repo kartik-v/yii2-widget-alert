@@ -1,15 +1,17 @@
 <h1 align="center">
-    <a href="http://demos.krajee.com" title="Krajee Demos" target="_blank">
+    <a href="http://plugins.krajee.com" title="Krajee Plugins" target="_blank">
         <img src="http://kartik-v.github.io/bootstrap-fileinput-samples/samples/krajee-logo-b.png" alt="Krajee Logo"/>
     </a>
     <br>
     yii2-widget-alert
     <hr>
     <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DTP3NZQ6G2AYU"
-       title="Donate via Paypal" target="_blank">
-        <img src="http://kartik-v.github.io/bootstrap-fileinput-samples/samples/donate.png" alt="Donate"/>
-    </a>
+       title="Donate via Paypal" target="_blank"><img src="https://kartik-v.github.io/bootstrap-fileinput-samples/samples/donate.png" height="60" alt="Donate"/></a>
+    &nbsp; &nbsp; &nbsp;
+    <a href="https://www.buymeacoffee.com/kartikv" title="Buy me a coffee" ><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="60" alt="kartikv" /></a>
 </h1>
+
+<div align="center">
 
 [![Stable Version](https://poser.pugx.org/kartik-v/yii2-widget-alert/v/stable)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
 [![Unstable Version](https://poser.pugx.org/kartik-v/yii2-widget-alert/v/unstable)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
@@ -17,6 +19,8 @@
 [![Total Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/downloads)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
 [![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/d/monthly)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
 [![Daily Downloads](https://poser.pugx.org/kartik-v/yii2-widget-alert/d/daily)](https://packagist.org/packages/kartik-v/yii2-widget-alert)
+
+</div>
 
 This extension contains a couple of useful widgets. The `Alert` widget extends the `\yii\bootstrap\Alert` widget with more easy styling and auto fade out options. In addition, it includes a `AlertBlock` widget that groups multiple `\kartik\widget\Alert` or `kartik\widget\Growl` widgets in one single block and renders them stacked vertically on the current page. 
 You can choose the `TYPE_ALERT` style or the `TYPE_GROWL` style for your notifications. You can also set the widget to automatically read and display session flash 

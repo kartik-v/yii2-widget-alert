@@ -1,6 +1,12 @@
 Change Log: `yii2-widget-alert`
 ===============================
 
+## Version 1.1.5
+
+**Date:** 16-Oct-2021
+
+- Enhancements for Bootstrap 5.x support.
+
 ## Version 1.1.4
 
 **Date:** 02-Jun-2020
